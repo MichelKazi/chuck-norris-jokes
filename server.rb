@@ -3,6 +3,13 @@ require 'chucknorris'
 set :port, 3000
 
 get '/' do
+  
+
+  
   @joke = ChuckNorris.random
+  while @joke.include? "rape"
+    @joke=ChuckNorris.random
+  end
+
   erb :index
 end
